@@ -1,0 +1,75 @@
+<div fxFlex fxLayout="column wrap" fxLayoutAlign="start center">
+    <div fxFlex fxLayout="column" fxLayoutAlign="center center">
+        <h1 class="title-text">Transliteracija ćirilice u latinicu ili obrnuto!</h1>
+    </div>
+
+    <div fxFlex fxFill fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div fxFlex="45%" class="from">
+            <mat-form-field appearance="fill" fxFlex="100%">
+                <mat-label>Tekst koji želite da prebacite u ćirilicu/latinicu</mat-label>
+                <textarea #from class="scroller"
+                  matInput
+                  cdkTextareaAutosize
+                  cdkAutosizeMinRows="5"
+                  cdkAutosizeMaxRows="10"
+                  (keyup)="startTransliterate($event.target.value)"></textarea>
+            </mat-form-field>
+        </div>
+        <div fxFlex="45%" #to class="to">
+            <mat-form-field appearance="fill" fxFlex="100%">
+                <mat-label>Rezultat će biti ispisan ovde</mat-label>
+                <textarea #to class="scroller"
+                  matInput
+                  cdkTextareaAutosize
+                  cdkAutosizeMinRows="5"
+                  cdkAutosizeMaxRows="10" 
+                  readonly
+                  [value]="result"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div fxFlex fxFill fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div fxFlex="45%" fxLayoutAlign="start center">
+            <button type="button" mat-raised-button color="primary" (click)="copyInput()">
+                Kopiraj unos
+            </button>
+        </div>
+        <div fxFlex="45%" fxLayoutAlign="end center">
+            <button type="button" mat-raised-button color="primary" (click)="copyResult()">
+                Kopiraj rezultat
+            </button>
+        </div>
+        
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <div fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+
+        <p class="title-text">Možete izabrati i tekstualni (.txt) fajl:</p>
+
+        <input type="file" class="file-input" #fileUpload name="file" (change)="onFileSelected($event)"/>
+
+        <div fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="7px" class="file-upload">
+            
+            <button type="button" mat-mini-fab color="primary" (click)="fileUpload.click()">
+                <mat-icon>attach_file</mat-icon>
+            </button>
+
+            <div>
+                <p class="title-text">{{ fileName || "" }}</p>
+            </div>
+        </div>
+
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <div fxFlex fxLayout="column" fxLayoutAlign="center center">
+        <button type="button" mat-raised-button color="warn" (click)="reset()">
+            Resetuj sve
+        </button>
+    </div>
+
+</div>

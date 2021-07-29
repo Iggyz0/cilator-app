@@ -1,0 +1,33 @@
+<div fxFlex fxFlexFill fxLayout="column" class="mat-app-background app-comp" [ngClass]="isDarkTheme? 'darkMode' : '' ">
+
+  <div>
+    <mat-toolbar color="primary" class="toolbar-transparent">
+      <div class="logo" fxLayoutAlign="center center">
+        <img src="../../dist/angular-build/assets/cilator_logo.png"/>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <span [ngClass]="isDarkTheme? '' : 'dark-text' ">Ćilator - Transliterator</span>
+      <span class="spacer"></span>
+      <div>
+        <mat-slide-toggle (change)="toggleTheme()" [checked]="isDarkTheme">
+          <mat-icon [ngClass]="isDarkTheme? '' : 'dark-text' ">dark_mode</mat-icon>
+        </mat-slide-toggle>
+      </div>
+    </mat-toolbar>
+  </div>
+  <div fxFlex fxFlexFill class="app-content" fxLayout="column wrap">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <span class="spacer"></span>
+  <!-- footer -->
+  <mat-toolbar  class="footer" color="primary" fxLayoutAlign="center center">
+    <footer>
+      <span [ngClass]="isDarkTheme? '' : 'dark-text' ">Copyright &copy;</span>&nbsp;<a class="github-link" [ngClass]="isDarkTheme? 'white-text' : 'dark-text' " href="https://github.com/Iggyz0" target="_blank">Iggyz0@Github</a>
+    </footer>
+  </mat-toolbar>
+
+</div>
