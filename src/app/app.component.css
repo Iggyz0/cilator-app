@@ -11,6 +11,22 @@
     flex: 1 1 auto;
 }
 
+.electron-bar-name {
+    margin-left: 10px;
+}
+
+.drag {
+    -webkit-app-region: drag;
+}
+
+.nodrag {
+    -webkit-app-region: no-drag !important;
+}
+
+.noselect {
+    -webkit-user-select: none;
+}
+
 .logo > img {
     height: 46px;
 }

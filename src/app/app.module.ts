@@ -21,7 +21,7 @@ import { LocalstorageService } from './services/localstorage.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule,
+    MaterialModule
   ],
   providers: [TransliterateService, LocalstorageService],
   bootstrap: [AppComponent]
