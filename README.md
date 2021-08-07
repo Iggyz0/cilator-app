@@ -1,10 +1,14 @@
+# GUI
+
+![electron_2021-08-04_14-54-15](https://user-images.githubusercontent.com/82712969/128184360-4ac61ef2-096e-4cee-8a38-d210711526d6.png)
+![electron_2021-08-04_14-54-08](https://user-images.githubusercontent.com/82712969/128184373-a2bddfbc-670f-4e03-b36b-05e8a403ca92.png)
+
+
 # Custom Commands
 
 Run `npm run build-win` to build a Windows distributable (.exe) file.   
 Run `npm run build-mac` to build a Mac distributable file.  
 Run `npm run build-linux` to build a Linux distributable file.  
-
-
 
 # AngularApp
 

@@ -1,5 +1,22 @@
 <div fxFlex fxFlexFill fxLayout="column" class="mat-app-background app-comp" [ngClass]="isDarkTheme? 'darkMode' : '' ">
 
+  <div *ngIf="isElectron" fxLayout="row" fxLayoutAlign="space-between center" class="drag noselect">
+    <div class="electron-bar-name">
+      <span>Ćilator</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" class="nodrag">
+      <button id="min-btn" type="button" mat-button color="primary">
+        <mat-icon>minimize</mat-icon>
+      </button>
+      <button id="max-btn" type="button" mat-button color="primary">
+        <mat-icon>maximize</mat-icon>
+      </button>
+      <button id="close-btn" type="button" mat-button color="primary">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
   <div>
     <mat-toolbar color="primary" class="toolbar-transparent">
       <div class="logo" fxLayoutAlign="center center">

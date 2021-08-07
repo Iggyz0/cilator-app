@@ -9,12 +9,21 @@ import { LocalstorageService } from './services/localstorage.service';
 export class AppComponent implements OnInit {
   title = 'angular-app';
 
-  constructor(private localStorageService: LocalstorageService) {}
+  constructor(private localStorageService: LocalstorageService) {  }
 
   isDarkTheme: boolean = true;
+  userAgent = navigator.userAgent.toLowerCase();
+  isElectron: boolean = false;
+
 
   ngOnInit() {
     this.getThemePreferenceFromLocalStorage();
+
+    this.isElectronRunning();
+
+    if (this.isElectron) {
+      this.loadScript("assets/renderer.js");
+    }
   }
 
   toggleTheme() {
@@ -34,5 +43,23 @@ export class AppComponent implements OnInit {
       else
         this.isDarkTheme = false;
     }
+  }
+
+  isElectronRunning() {
+    if (this.userAgent.indexOf(' electron/') > -1) {
+      this.isElectron = true;
+    } else {
+      this.isElectron = false;
+    }
+  }
+
+  private loadScript(url: string) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = url;
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
   }
 }
