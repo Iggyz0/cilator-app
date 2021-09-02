@@ -5,6 +5,7 @@
 
 
 # Custom Commands
+Thanks to [Christian Engvall](https://www.christianengvall.se/electron-packager-tutorial/) and [SciTechEnthusiast](https://github.com/SciTechEnthusiast/AngularElectronized/releases/tag/1) for quick and easy Angular/Electron tutorials and build commands.
 
 Run `npm run build-win` to build a Windows distributable (.exe) file.   
 Run `npm run build-mac` to build a Mac distributable file.  
